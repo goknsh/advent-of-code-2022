@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/01-calorie-counting-part-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/01-calorie-counting-part-2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-rock-paper-scissors-part-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02-rock-paper-scissors-part-2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/03-rucksack-reorganization-part-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/03-rucksack-reorganization-part-2/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/01-calorie-counting-part-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/01-calorie-counting-part-2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/02-rock-paper-scissors-part-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/02-rock-paper-scissors-part-2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/03-rucksack-reorganization-part-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/03-rucksack-reorganization-part-2/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
