@@ -1,54 +1,52 @@
 use std::{env, fs};
-use std::collections::HashMap;
+use std::collections::{HashMap};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() == 2 {
         match fs::read_to_string(&args[1]) {
             Ok(input) => {
-                let mut picked_map: HashMap<i32, bool> = HashMap::new();
-                let mut letter_map: HashMap<char, [i32;]> = HashMap::with_capacity(52);
-                let mut current_line = 0;
+                let mut sum: i32 = 0;
+                let mut line_number = 0;
+                let mut letter_appears_in: HashMap<char, i32> = HashMap::with_capacity(52);
                 for line in input.lines() {
-                    for letter in line.chars().collect() {
-                        match letter_map.get(letter) {
-                            Some(x) => {
-                                let mut picks_found = [-1; 2];
-                                let mut current_pick = 0;
-                                for i in x {
-                                    if i != current_line && !picked_map.get(i).unwrap() {
-                                        picks_found[current_pick] = *i;
-                                        current_pick += 1;
-                                        if current_pick == 2 {
-                                            break;
-                                        }
-                                    }
+                    let letters: Vec<char> = line.chars().collect();
+                    for letter in letters {
+                        if line_number == 0 {
+                            match letter_appears_in.get(&letter) {
+                                None => {
+                                    letter_appears_in.insert(letter, line_number);
                                 }
-                                if current_pick == 2 {
-                                    picked_map.insert(current_line, true);
-                                    for i in picks_found {
-                                        picked_map.insert(i, true);
-                                    }
-                                    break;
-                                }
+                                _ => {}
                             }
-                            None => {
-                                letter_map.insert(*letter, [current_line]);
-                            },
+                        } else if line_number == 1 {
+                            match letter_appears_in.get_mut(&letter) {
+                                Some(last_appears_in) => {
+                                    *last_appears_in = line_number;
+                                }
+                                _ => {}
+                            }
+                        } else {
+                            match letter_appears_in.get(&letter) {
+                                Some(last_appears_in) => {
+                                    if *last_appears_in == line_number - 1 {
+                                        let mut letter_byte = [0; 4];
+                                        letter.encode_utf8(&mut letter_byte);
+                                        if letter.is_ascii_lowercase() {
+                                            sum += i32::from_le_bytes(letter_byte) - 96;
+                                        } else if letter.is_ascii_uppercase() {
+                                            sum += i32::from_le_bytes(letter_byte) - 38;
+                                        }
+                                        letter_appears_in.clear();
+                                        break;
+                                    }
+                                }
+                                _ => {}
+                            }
                         }
                     }
-                }
-                let mut sum = 0;
-                for key in sum_map.keys() {
-                    if sum_map.get(key).unwrap() % 3 == 0 {
-                        let mut letter_byte = [0; 4];
-                        key.encode_utf8(&mut letter_byte);
-                        if key.is_ascii_lowercase() {
-                            sum += (i32::from_le_bytes(letter_byte) - 96) * sum_map.get(key).unwrap() / 3;
-                        } else if key.is_ascii_uppercase() {
-                            sum += (i32::from_le_bytes(letter_byte) - 38) * sum_map.get(key).unwrap() / 3;
-                        }
-                    }
+                    line_number += 1;
+                    line_number %= 3;
                 }
                 println!("Sum of priorities of duplicate items: {}", sum)
             }
