@@ -21,6 +21,8 @@
       <sourceFolder url="file://$MODULE_DIR$/08-treetop-tree-house-part-2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/09-rope-bridge-part-1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/09-rope-bridge-part-2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10-cathode-ray-tube-part-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10-cathode-ray-tube-part-2/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/01-calorie-counting-part-1/target" />
       <excludeFolder url="file://$MODULE_DIR$/01-calorie-counting-part-2/target" />
       <excludeFolder url="file://$MODULE_DIR$/02-rock-paper-scissors-part-1/target" />
@@ -39,6 +41,8 @@
       <excludeFolder url="file://$MODULE_DIR$/08-treetop-tree-house-part-2/target" />
       <excludeFolder url="file://$MODULE_DIR$/09-rope-bridge-part-1/target" />
       <excludeFolder url="file://$MODULE_DIR$/09-rope-bridge-part-2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/10-cathode-ray-tube-part-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/10-cathode-ray-tube-part-2/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
